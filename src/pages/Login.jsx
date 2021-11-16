@@ -55,8 +55,8 @@ class Login extends Component {
       return <Load />;
     }
     return (
-      <div data-testid="page-login" /* className="login" */>
-        <img src="logo_login.png" alt="Logo TrybeTunes" className="login-logo"/>
+      <>
+        {/* <img src="logo_login.png" alt="Logo TrybeTunes" className="login-logo"/> */}
         <input
           type="text"
           name="userName"
@@ -72,7 +72,7 @@ class Login extends Component {
         >
           Entrar
         </button>
-      </div>
+      </>
     );
   }
 }
