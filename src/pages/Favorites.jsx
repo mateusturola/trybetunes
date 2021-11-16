@@ -20,12 +20,8 @@ class Favorites extends Component {
   }
 
   handler() {
-    this.setState(
-      {
-        saving: true,
-      },
-      this.getFavoriteSongs(),
-    );
+    this.getFavoriteSongs()
+  
   }
 
   getFavoriteSongs() {
@@ -52,7 +48,7 @@ class Favorites extends Component {
                   trackName={ alb.trackName }
                   trackId={ alb.trackId }
                   album={ alb }
-                  handler={ this.handler }
+                  handler={ this.getFavoriteSongs }
                 />
               </li>
             ))}

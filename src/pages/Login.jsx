@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Load from '../Components/Load';
 import { createUser } from '../services/userAPI';
+import '../Styles/login.css'
 
 class Login extends Component {
   constructor() {
@@ -54,8 +55,8 @@ class Login extends Component {
       return <Load />;
     }
     return (
-      <div data-testid="page-login">
-        <p>Page Login</p>
+      <div data-testid="page-login" /* className="login" */>
+        <img src="logo_login.png" alt="Logo TrybeTunes" className="login-logo"/>
         <input
           type="text"
           name="userName"
