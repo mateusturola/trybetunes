@@ -12,7 +12,6 @@ import NotFound from '../pages/NotFound';
 class Routes extends Component {
   render() {
     return (
-      <main className="content">
         <Switch>
           <Route exact path="/" component={ Login } />
           <Route exact path="/search" component={ Search } />
@@ -22,7 +21,6 @@ class Routes extends Component {
           <Route exact path="/profile/edit" component={ ProfileEdit } />
           <Route exact path="*" component={ NotFound } />
         </Switch>
-      </main>
     );
   }
 }

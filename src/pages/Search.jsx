@@ -41,11 +41,9 @@ class Search extends Component {
   searchAlbuns() {
     const { searchInput } = this.state;
     this.setState({ searching: true, ArtistaName: searchInput });
-    searchAlbumsAPI(searchInput)
-      .then((data) => this.setState(
-        { album: data, beFound: true },
-        () => this.clearInput(),
-      ));
+    searchAlbumsAPI(searchInput).then((data) =>
+      this.setState({ album: data, beFound: true }, () => this.clearInput())
+    );
   }
 
   render() {
@@ -59,28 +57,32 @@ class Search extends Component {
       return <Load />;
     }
     return (
-      <div data-testid="page-search">
+      <>
         <Header />
-        <input
-          type="text"
-          name="searchInput"
-          value={ searchInput }
-          placeholder="Digite o nome do Artista"
-          onChange={ handleChange }
-          data-testid="search-artist-input"
-        />
-        <button
-          type="button"
-          disabled={ isDisable }
-          data-testid="search-artist-button"
-          onClick={ searchAlbuns }
-        >
-          Pesquisar
-        </button>
-
-        {beFound && <ShowAlbuns album={ album } ArtistaName={ ArtistaName } />}
-
-      </div>
+        <div>
+          <input
+            type="text"
+            name="searchInput"
+            value={searchInput}
+            placeholder="Digite o nome do Artista"
+            onChange={handleChange}
+            data-testid="search-artist-input"
+          />
+          <button
+            type="button"
+            disabled={isDisable}
+            data-testid="search-artist-button"
+            onClick={searchAlbuns}
+          >
+            Pesquisar
+          </button>
+        </div>
+        {beFound && (
+          <div className="albuns">
+            <ShowAlbuns album={album} ArtistaName={ArtistaName} />
+          </div>
+        )}
+      </>
     );
   }
 }

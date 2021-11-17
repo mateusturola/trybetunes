@@ -1,4 +1,4 @@
-.page {
+.login-page {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -6,13 +6,13 @@
   justify-content: center;
 }
 
-.page::before {
+.logo {
   content: url(../img/logo_login.png);
   margin: 30px 0;
 }
 
 
-.content {
+.login {
   width: 697px;
   height: 314px;
 
@@ -26,7 +26,8 @@
   align-items: center;
   justify-content: center;
 }
-.content input , .content button {
+
+.login input , .login button {
   width: 520px;
   margin: 10px auto;
 }
