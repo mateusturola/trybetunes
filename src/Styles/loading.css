@@ -2,9 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .c-loader {
+  animation: is-rotating 1s infinite;
+  border: 10px solid #6a6a6a;
+  border-radius: 50%;
+  border-top-color: #048c6d;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.load-box-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-loader-header {
   animation: is-rotating 1s infinite;
   border: 5px solid #e5e5e5;
   border-radius: 50%;
@@ -12,6 +30,10 @@
   height: 30px;
   width: 30px;
   margin-bottom: 10px;
+}
+
+.load-text-black{
+  color:#6a6a6a;
 }
 
 @keyframes is-rotating {

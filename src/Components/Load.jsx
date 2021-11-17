@@ -7,7 +7,8 @@ class Load extends Component {
     return (
       <div className="load-box">
         <div class="c-loader"></div>
-        <h3 className="load-text">Carregando...</h3>
+        <h3 className="load-text-black">Carregando...</h3>
+
       </div>
     );
   }

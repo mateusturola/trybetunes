@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Load from './Load';
 import '../Styles/header.css';
+import LoadHeader from './LoadHeader';
 
 class Header extends Component {
   constructor() {
@@ -30,7 +31,7 @@ class Header extends Component {
           <div className="logo-topo"></div>
           <div className="username-header">
             {!userName ? (
-              <Load />
+              <LoadHeader />
             ) : (
               <div data-testid="header-user-name" className="header-user">
                 <img src={ userImage } alt="Profile" className="profile-image" />

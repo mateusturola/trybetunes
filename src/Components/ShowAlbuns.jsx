@@ -19,7 +19,7 @@ class ShowAlbuns extends Component {
           {' '}
           {ArtistaName}
         </h3>
-        <ul>
+        <ul className="albuns">
           {albuns.map(
             ({
               artworkUrl100,
@@ -33,7 +33,7 @@ class ShowAlbuns extends Component {
                   data-testid={ `link-to-album-${collectionId}` }
                 >
                   <img src={ artworkUrl100 } alt={ collectionName } />
-                  <p>{collectionName}</p>
+                  <h4>{collectionName}</h4>
                   <p>{artistName}</p>
                 </Link>
               </li>

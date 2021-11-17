@@ -3,6 +3,8 @@ import Header from '../Components/Header';
 import Load from '../Components/Load';
 import ShowAlbuns from '../Components/ShowAlbuns';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import '../Styles/search.css'
+
 
 class Search extends Component {
   constructor() {
@@ -59,7 +61,7 @@ class Search extends Component {
     return (
       <>
         <Header />
-        <div>
+        <div className="search-area">
           <input
             type="text"
             name="searchInput"
