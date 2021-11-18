@@ -20,7 +20,7 @@ class Header extends Component {
 
   async setUser() {
     const userData = await getUser();
-    this.setState({ userName: userData.name, userImage: 'https://api.ejcomp.com.br/members/1586969992913-perfilsemfoto.jpg' });
+    this.setState({ userName: userData.name, userImage: userData.image });
   }
 
   render() {

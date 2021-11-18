@@ -34,7 +34,7 @@ class Login extends Component {
 
   saveUser(userName) {
     this.setState({ saving: true }, () => {
-      createUser({ name: userName }).then(() => this.setState({
+      createUser({ name: userName, image: "https://api.ejcomp.com.br/members/1586969992913-perfilsemfoto.jpg"}).then(() => this.setState({
         saving: false,
         logged: true,
       }));

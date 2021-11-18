@@ -26,9 +26,9 @@ input {
 
 }
 
-button {
+button, .button {
   padding: 12px 16px;
-  background: #003be5;
+  background: #036B52;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 2px;
   color: #fff;
@@ -36,8 +36,8 @@ button {
   text-transform: uppercase;
 }
 
-button:active, button:hover {
-  background: #03195c;
+button:active, button:hover, .button:hover {
+  background: #023031;
 }
 
 button:disabled {

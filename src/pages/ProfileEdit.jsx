@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import Header from '../Components/Header';
 import Load from '../Components/Load';
 import { getUser, updateUser } from '../services/userAPI';
+import '../Styles/profile.css';
+
 
 class ProfileEdit extends Component {
   constructor() {

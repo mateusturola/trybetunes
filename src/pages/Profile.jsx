@@ -33,12 +33,14 @@ class Profile extends Component {
         {saving ? (
           <Load />
         ) : (
-          <div>
-            <img src={ user.image } alt={ user.name } data-testid="profile-image" />
-            <h4>{user.name}</h4>
-            <p>{user.email}</p>
-            <p>{user.description}</p>
-            <Link to="profile/edit">Editar perfil</Link>
+          <div className="profile">
+            <img src={user.image} alt={user.name} data-testid="profile-image" />
+            <div className="info-perfil">
+              <h2>{user.name}</h2>
+              <p>{user.email}</p>
+              <p className="description-p">{user.description}</p>
+              <Link to="profile/edit" className='button'>Editar perfil</Link>
+            </div>
           </div>
         )}
       </div>

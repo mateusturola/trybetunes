@@ -29,7 +29,8 @@ li {
 
 
 .music-track:hover { 
-  background: #e5e7e9;
+  background: #048c6d;
+  color: #fefefe
 }
 
 .c-loader-header {
