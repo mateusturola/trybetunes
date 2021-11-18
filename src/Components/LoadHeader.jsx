@@ -7,7 +7,6 @@ class LoadHeader extends Component {
     return (
       <div className="load-box-header">
         <div class="c-loader-header"></div>
-        <h3 className="load-text">Carregando...</h3>
       </div>
     );
   }

@@ -6,6 +6,8 @@ import {
   removeSong,
 } from '../services/favoriteSongsAPI';
 import Load from './Load';
+import '../Styles/musicCard.css';
+import LoadHeader from './LoadHeader';
 
 class MusicCard extends Component {
   constructor() {
@@ -27,52 +29,64 @@ class MusicCard extends Component {
     const { favorite } = this.state;
     const { handler } = this.props;
     if (favorite) {
-      this.setState({ saving: true }, () => removeSong(album)
-        .then(() => this.setState({ saving: false, favorite: false }, handler)));
+      this.setState({ saving: true }, () =>
+        removeSong(album).then(() =>
+          this.setState({ saving: false, favorite: false }, handler)
+        )
+      );
     }
 
     if (!favorite) {
-      this.setState({ saving: true }, () => addSong(album)
-        .then(() => this.setState({ saving: false, favorite: true }, handler)));
+      this.setState({ saving: true }, () =>
+        addSong(album).then(() =>
+          this.setState({ saving: false, favorite: true }, handler)
+        )
+      );
     }
   }
 
   loadFavorites() {
     const { trackName } = this.props;
     this.setState({ saving: true });
-    getFavoriteSongs().then((favorites) => this.setState({
-      saving: false,
-      favorite: favorites.some((fav) => fav.trackName === trackName),
-    }));
+    getFavoriteSongs().then((favorites) =>
+      this.setState({
+        saving: false,
+        favorite: favorites.some((fav) => fav.trackName === trackName),
+      })
+    );
   }
 
   render() {
     const { album, trackName, previewUrl, trackId } = this.props;
     const { saving, favorite } = this.state;
     return (
-      <div key={ trackName }>
-        <p>{trackName}</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
+      <>
+        <h3>{trackName}</h3>
+        <audio data-testid="audio-component" src={previewUrl} controls>
+          <track kind="captions" />O seu navegador não suporta o elemento{' '}
           <code>audio</code>
         </audio>
         {saving ? (
-          <Load />
+          <LoadHeader />
         ) : (
-          <label htmlFor={ `fav-${trackName}` }>
-            <input
-              type="checkbox"
-              id={ `fav-${trackName}` }
-              data-testid={ `checkbox-music-${trackId}` }
-              onChange={ () => this.handleCheck(album) }
-              checked={ favorite }
-            />
-            Favorita
-          </label>
+
+        <div className="pretty p-toggle p-plain p-jelly">
+          <input
+            type="checkbox"
+            id={`fav-${trackName}`}
+            data-testid={`checkbox-music-${trackId}`}
+            onChange={() => this.handleCheck(album)}
+            checked={favorite}
+          />{' '}
+          <div className="state p-off">
+            <i className="icon fa fa-heart-o "></i>
+          </div>
+          <div className="state p-on p-danger-o">
+            <i className="icon fa fa-heart"></i>
+          </div>
+        </div>
         )}
-      </div>
+      </>
     );
   }
 }

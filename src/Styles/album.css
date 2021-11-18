@@ -1,0 +1,30 @@
+.page-album {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-musics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.info-album {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0;
+}
+
+.info-album img {
+  margin-right: 10px;
+}
+
+.album-text h3 {
+  margin: 10px 0;
+}
+  
+.fav-name {
+  font-size: 1.8em;  
+}

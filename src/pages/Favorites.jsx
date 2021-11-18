@@ -3,6 +3,8 @@ import MusicCard from '../Components/ MusicCard';
 import Header from '../Components/Header';
 import Load from '../Components/Load';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import '../Styles/album.css';
+import '../Styles/musicCard.css';
 
 class Favorites extends Component {
   constructor() {
@@ -20,16 +22,17 @@ class Favorites extends Component {
   }
 
   handler() {
-    this.getFavoriteSongs()
-  
+    this.getFavoriteSongs();
   }
 
   getFavoriteSongs() {
     this.setState({ saving: true });
-    getFavoriteSongs().then((favorites) => this.setState({
-      fav: favorites,
-      saving: false,
-    }));
+    getFavoriteSongs().then((favorites) =>
+      this.setState({
+        fav: favorites,
+        saving: false,
+      })
+    );
   }
 
   render() {
@@ -40,19 +43,24 @@ class Favorites extends Component {
         {saving ? (
           <Load />
         ) : (
-          <section>
-            {fav.map((alb) => (
-              <li key={ alb.trackName }>
-                <MusicCard
-                  previewUrl={ alb.previewUrl }
-                  trackName={ alb.trackName }
-                  trackId={ alb.trackId }
-                  album={ alb }
-                  handler={ this.getFavoriteSongs }
-                />
-              </li>
-            ))}
-          </section>
+          <>
+            <div className="info-album">
+                <h2 className="fav-name">Favoritos</h2>
+            </div>
+            <section className="list-musics">
+              {fav.map((alb) => (
+                <div className="music-track">
+                  <MusicCard
+                    previewUrl={alb.previewUrl}
+                    trackName={alb.trackName}
+                    trackId={alb.trackId}
+                    album={alb}
+                    handler={this.getFavoriteSongs}
+                  />
+                </div>
+              ))}
+            </section>
+          </>
         )}
       </div>
     );
