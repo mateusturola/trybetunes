@@ -4,6 +4,7 @@ import Header from '../Components/Header';
 import Load from '../Components/Load';
 import { getUser, updateUser } from '../services/userAPI';
 import '../Styles/profile.css';
+import '../Styles/profile-edit.css';
 
 
 class ProfileEdit extends Component {
@@ -72,12 +73,12 @@ class ProfileEdit extends Component {
       return <Redirect to="/profile" />;
     }
     return (
-      <div data-testid="page-profile-edit">
+      <div data-testid="page-profile-edit" className="page-profile-edit">
         <Header />
         {saving ? (
           <Load />
         ) : (
-          <div>
+          <div className="profile-edit">
             <label htmlFor="name">
               Nome:
               <input

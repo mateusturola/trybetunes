@@ -57,11 +57,12 @@ class MusicCard extends Component {
   }
 
   render() {
-    const { album, trackName, previewUrl, trackId } = this.props;
+    const { album, trackName, previewUrl, trackId, artistName } = this.props;
     const { saving, favorite } = this.state;
     return (
       <>
         <h3>{trackName}</h3>
+        <p>{artistName}</p>
         <audio data-testid="audio-component" src={previewUrl} controls>
           <track kind="captions" />O seu navegador não suporta o elemento{' '}
           <code>audio</code>
@@ -94,6 +95,7 @@ class MusicCard extends Component {
 MusicCard.propTypes = {
   previewUrl: PropTypes.string.isRequired,
   trackName: PropTypes.string.isRequired,
+  artistName: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
   album: PropTypes.shape({
     artistId: PropTypes.number,

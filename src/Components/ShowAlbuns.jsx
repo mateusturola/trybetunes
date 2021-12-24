@@ -11,7 +11,6 @@ class ShowAlbuns extends Component {
         <h3>Nenhum álbum foi encontrado</h3>
       );
     }
-
     return (
       <section>
         <h3>

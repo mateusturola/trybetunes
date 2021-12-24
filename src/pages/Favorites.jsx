@@ -53,6 +53,7 @@ class Favorites extends Component {
                   <MusicCard
                     previewUrl={alb.previewUrl}
                     trackName={alb.trackName}
+                    artistName={alb.artistName}
                     trackId={alb.trackId}
                     album={alb}
                     handler={this.getFavoriteSongs}
